@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Calculator</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/images/fav.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="form-container">
+            <h1 style="font-size:25px;">Profit Calculator By Yousif Sabba</h1>
+            <form id="profitCalculatorForm">
+                <div class="input-group">
+                    <label for="amount">Amount:</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="amount" placeholder="Enter amount" required>
+                        <select id="currency">
+                            <option value="BHD">BHD</option>
+                            <option value="USD">USD</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="rate">Expected Profit Rate (%):</label>
+                    <input type="number" id="rate" placeholder="Enter profit rate" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="period">Period (Days):</label>
+                    <input type="number" step="0.01" id="period" placeholder="Enter period in days" required>
+                </div>
+
+                <button type="button" onclick="calculateProfit()">Calculate Profit</button>
+            </form>
+            
+            <div id="result"></div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="profitChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
